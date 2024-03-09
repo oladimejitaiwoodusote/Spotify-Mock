@@ -48,8 +48,7 @@ const Slider: React.FC<SliderProps> = ({
                     bg-white
                     rounded-full
                     h-full
-                "
-                
+                "                
              />
         </RadixSlider.Track>
     </RadixSlider.Root>
