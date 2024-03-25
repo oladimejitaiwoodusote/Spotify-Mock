@@ -1,3 +1,4 @@
+import getActiveProductsWithPrices from "@/actions/getActiveProductsWithPrices";
 import getSongsByUserId from "@/actions/getSongsByUserId";
 import Player from "@/components/Player";
 import Sidebar from "@/components/Sidebar";
@@ -32,7 +33,7 @@ export default async function RootLayout({
         <ToasterProvider/>
         <SupabaseProvider>
           <UserProvider>
-            <ModalProvider/>
+            <ModalProvider products={products}/>
             <Sidebar songs={userSongs}>
               {children}
             </Sidebar>
