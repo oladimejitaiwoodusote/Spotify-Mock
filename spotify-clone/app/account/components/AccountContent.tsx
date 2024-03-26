@@ -6,6 +6,7 @@ import { useUser } from "@/hooks/useUser";
 import { postData } from "@/libs/helpers";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { redirectToPortal } from "@/libs/redirectToPortal";
 import toast from "react-hot-toast";
 
 const AccountContent = () => {
@@ -27,7 +28,15 @@ const AccountContent = () => {
         const {url, error} = await postData({
             url: '/api/create-portal-link'
         });
-        window.location.assign(url);
+
+
+        // window.location.assign(url);
+        // if (typeof window !== 'undefined') {
+        //     window.location.assign(url);
+        // }
+
+        const { redirectToPortal } = await import('./redirectToPortal');
+        redirectToPortal(url)
     } catch(error) {
         if (error) {
             toast.error((error as Error).message);
@@ -54,6 +63,13 @@ const AccountContent = () => {
                 <p>
                     You are currently on the <b>{subscription?.prices?.products?.name}</b>plan.
                 </p>
+                <Button
+                    disabled={loading || isLoading}
+                    onClick={redirectToCustomerPortal}
+                    className="w-[300px]"
+                >
+                    Open customer portal
+                </Button>
             </div>
         )}
     </div>
