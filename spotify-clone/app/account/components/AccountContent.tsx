@@ -6,7 +6,6 @@ import { useUser } from "@/hooks/useUser";
 import { postData } from "@/libs/helpers";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { redirectToPortal } from "@/libs/redirectToPortal";
 import toast from "react-hot-toast";
 
 const AccountContent = () => {
@@ -30,13 +29,10 @@ const AccountContent = () => {
         });
 
 
-        // window.location.assign(url);
-        // if (typeof window !== 'undefined') {
-        //     window.location.assign(url);
-        // }
-
-        const { redirectToPortal } = await import('./redirectToPortal');
-        redirectToPortal(url)
+    
+        if (typeof window !== 'undefined') {
+            window.location.assign(url);
+          }
     } catch(error) {
         if (error) {
             toast.error((error as Error).message);
