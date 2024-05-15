@@ -10,6 +10,7 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import "./globals.css";
 
+
 const font = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default async function RootLayout({
           <UserProvider>
             <ModalProvider products={products}/>
             <Sidebar songs={userSongs}>
-              {children}
+                {children}
             </Sidebar>
             <Player/>
           </UserProvider>
