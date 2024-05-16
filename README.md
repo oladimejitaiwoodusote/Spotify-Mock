@@ -22,4 +22,5 @@ Deployed Site: https://spotify-mock-xi.vercel.app/
 - Vercel
 
 ## Features
-
+### User Account and Subscription Management
+- **Account Creation and User Authentication**: Allows users to create an account and log in to access their personal space.
