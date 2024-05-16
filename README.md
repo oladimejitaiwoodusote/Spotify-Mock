@@ -50,4 +50,14 @@ Deployed Site: https://spotify-mock-xi.vercel.app/
 2. **Install Dependencies**
 - npm install
 
+3. **Set Environment Variables**
+Create a `env.local` file in the root of your project to store all your environment variables:
+- NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+- NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+- STRIPE_SECRET_KEY=your_stripe_key
+
+4. **Run the Development Server**
+- npm run dev
+
+
 
